@@ -16,15 +16,15 @@ class Weather:
     def __init__(self):
         self.api_key = Config().api_key
         
-    def weather(self, location='montreal'):
-        req = requests.get('http://api.openweathermap.org/data/2.5/weather?q=montreal,ca&APPID={self.api_key}')
+    def get(self, location='montreal'):
+        req = requests.get(f'http://api.openweathermap.org/data/2.5/weather?q=montreal,ca&APPID={self.api_key}')
         return req.content
 
 
 def main():
     assert len(sys.argv) >= 2, 'Please enter a command'
     weather = Weather()
-    print(weather.weather(sys.argv[1]))
+    print(weather.get(sys.argv[1]))
 
 
 if __name__ == '__main__':
