@@ -1,0 +1,12 @@
+# Virtual Environment
+bin/
+lib/
+pyvenv.cfg
+include/
+
+# Text editors
+*~
+
+# Config Files
+api_key.ini
+
